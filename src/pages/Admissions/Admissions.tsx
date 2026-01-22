@@ -90,7 +90,7 @@ export default function Admissions() {
             {requirements.map((req, index) => (
               <div key={index} className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition">
                 <div className="flex items-start gap-4">
-                  <div className="text-2xl text-green-600 flex-shrink-0">✓</div>
+                  <div className="text-2xl text-green-600 shrink-0">✓</div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">{req.title}</h3>
                     <p className="text-gray-600 text-sm">{req.description}</p>

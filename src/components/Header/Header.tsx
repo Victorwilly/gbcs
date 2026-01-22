@@ -13,8 +13,8 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4">
+    <header className="border-b border-gray-200 sticky top-0 bg-white z-10">
+      <div className="max-w-480 mx-auto px-4 md:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between gap-8">
           {/* Logo */}
           <div className="shrink-0">
@@ -96,6 +96,7 @@ function Header() {
                   <NavLink
                     key={link.path}
                     to={link.path}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     className={({ isActive }) =>
                       `text-sm font-medium transition-colors ${
                         isActive

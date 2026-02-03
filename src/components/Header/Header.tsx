@@ -100,7 +100,7 @@ function Header() {
                     className={({ isActive }) =>
                       `text-sm font-medium transition-colors ${
                         isActive
-                          ? "text-red-600 border-l-2 border-red-600 pl-2"
+                          ? "text-[#800020] border-l-2 border-[#800020] pl-2"
                           : "text-gray-700 hover:text-gray-900"
                       }`
                     }

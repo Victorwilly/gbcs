@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    --webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --light-shade: #FAF6F0;
+    --text-secondary: #4B5563;
+    --gray-text: #6F4E37;
+    --text-orange: #D4AF37;
+}

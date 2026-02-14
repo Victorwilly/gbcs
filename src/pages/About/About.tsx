@@ -225,23 +225,20 @@ export default function About() {
 
   const aims = [
     {
-      icon: "1️⃣",
       description: "To prepare men and women for effective Christian service",
     },
     {
-      icon: "2️⃣",
-      description:
-        "To provide systematic and intellectual mastery of Scripture and doctrine",
+      description: "To promote biblical evangelism and gospel preaching",
     },
     {
-      icon: "3️⃣",
-      description:
-        "To equip servants, leaders, evangelists, missionaries, pastors, and teachers for ministry",
+      description: "To train pastors and church leaders",
     },
     {
-      icon: "4️⃣",
+      description: "To develop spiritually mature Christian character",
+    },
+    {
       description:
-        "To develop spiritually mature leaders among Christians denominations",
+        "To organize seminars, revivals, crusades, workshops, and conferences",
     },
   ];
 
@@ -482,9 +479,7 @@ export default function About() {
                 className="bg-white p-8 text-center rounded-lg border-gray-200"
               >
                 <div className="w-full flex justify-center">
-                  <div aria-hidden>
-                    {item.icon}
-                  </div>
+                  <div aria-hidden>{item.icon}</div>
                 </div>
                 <h3 className="text-2xl font-bold my-5 text-gray-900">
                   {item.title}
@@ -499,7 +494,7 @@ export default function About() {
       {/* Aims & Objectives */}
       <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+          <h2 className="text-4xl font-bold text-center mb-12 text-[#6F4E37]">
             Aims & Objectives
           </h2>
 
@@ -507,9 +502,39 @@ export default function About() {
             {aims.map((aim, index) => (
               <div
                 key={index}
-                className="flex gap-6 items-start bg-yellow-50 p-6 rounded-lg"
+                className="flex gap-2 items-start bg-[#FFF8E7] p-6 rounded-lg"
               >
-                <div className="text-3xl shrink-0">{aim.icon}</div>
+                <div className="w-5 h-5 pt-1">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_11_1946)">
+                      <path
+                        d="M18.1673 8.33332C18.5479 10.2011 18.2767 12.1428 17.3989 13.8348C16.5211 15.5268 15.0897 16.8667 13.3436 17.6311C11.5975 18.3955 9.64203 18.5381 7.80342 18.0353C5.96482 17.5325 4.35417 16.4145 3.24007 14.8678C2.12597 13.3212 1.57577 11.4394 1.68123 9.53615C1.78668 7.63294 2.5414 5.8234 3.81955 4.4093C5.09769 2.9952 6.82199 2.06202 8.70489 1.76537C10.5878 1.46872 12.5155 1.82654 14.1665 2.77916"
+                        stroke="#2D5016"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M7.5 9.16659L10 11.6666L18.3333 3.33325"
+                        stroke="#2D5016"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_11_1946">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
                 <p className="text-gray-600 text-lg">{aim.description}</p>
               </div>
             ))}
@@ -520,7 +545,7 @@ export default function About() {
       {/* Accreditation & Affiliations */}
       <section className="bg-linear-to-r from-red-900 to-red-700 py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl font-bold text-center mb-2.5">
             Accreditation & Affiliations
           </h2>
           <p className="text-center text-red-100 max-w-2xl mx-auto mb-12 text-lg">

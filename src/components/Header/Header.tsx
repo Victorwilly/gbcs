@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -49,13 +49,14 @@ function Header() {
             >
               Log In
             </button>
-            <button
+            <Link
+              to="/register"
               type="button"
               aria-label="Register"
               className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium rounded"
             >
               Register
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -117,13 +118,14 @@ function Header() {
                   >
                     Log In
                   </button>
-                  <button
+                  <Link
+                    to="/register"
                     type="button"
                     aria-label="Register"
                     className="flex-1 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium rounded"
                   >
                     Register
-                  </button>
+                  </Link>
                 </div>
               </nav>
             </div>

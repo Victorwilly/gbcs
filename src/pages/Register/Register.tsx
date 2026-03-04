@@ -656,9 +656,9 @@ function Register() {
                       <h3 className="block text-[20px] font-bold text-[#374151] mb-1">
                         College/University (Optional)
                       </h3>
-                      <span className="block text-[14px] font-medium text-[#374151] mb-6">Fill this section if applicable</span>
-
-
+                      <span className="block text-[14px] font-medium text-[#374151] mb-6">
+                        Fill this section if applicable
+                      </span>
 
                       <label className="block text-[14px] font-semibold text-[#374151] mb-3">
                         School Name
@@ -859,7 +859,7 @@ function Register() {
                 type="button"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="px-6 py-2 text-sm font-medium text-[#374151] border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 text-sm font-medium hover:cursor-pointer text-[#374151] border border-gray-300 rounded-lg hover:bg-gray-50  disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Previous
               </button>
@@ -867,15 +867,18 @@ function Register() {
               {currentStep === 3 ? (
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-red-700 hover:bg-red-800 text-white text-sm font-medium rounded-lg"
+                  className="px-6 py-2 bg-red-700 hover:bg-red-800 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
                 >
                   Submit Application
                 </button>
               ) : (
                 <button
                   type="button"
-                  onClick={handleNext}
-                  className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium rounded-lg"
+                  onClick={() => {
+                    handleNext();
+                    window.scrollTo({ top: 0 });
+                  }}
+                  className="px-6 py-2 bg-yellow-500 hover:bg-yellow-60 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
                 >
                   Next Step
                 </button>

@@ -1,3 +1,4 @@
+import test from "node:test";
 import { useState } from "react";
 
 function Register() {
@@ -15,11 +16,16 @@ function Register() {
     stateOfOrigin: "",
     citizenship: "",
     selectStatus: "",
+    poBox: "",
 
     // Step 2 - Religious & Educational Background
-    religiousBelief: "",
     churchName: "",
-    denominationalAffiliation: "",
+    churchAddress: "",
+    memberStatus: "",
+    conversionDate: "",
+    testimonyMessage: "",
+    pastorName: "",
+    pastorAddress: "",
     elementarySchool: "",
     elementaryYear: "",
     secondarySchool: "",
@@ -91,11 +97,13 @@ function Register() {
           {/* Header */}
           <div className="mb-8">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h1 className="text-2xl tracking-[-.3px] md:text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-2xl tracking-[-.3px] font-bold text-gray-900 mb-2">
                 New Student Registration
               </h1>
 
-              <p className="text-sm text-gray-600">Step {currentStep} of 3</p>
+              <p className="text-sm text-[#800020] font-semibold">
+                Step {currentStep} of 3
+              </p>
             </div>
 
             {/* step indicators */}
@@ -114,7 +122,7 @@ function Register() {
               {stepStage.map((stage, index) => (
                 <p
                   key={index}
-                  className={`text-xs text-[#6B7280] ${currentStep === index + 1 ? "font-semibold text-[#800020]" : ""}`}
+                  className={`text-xs text-[#6B7280] font-medium ${currentStep === index + 1 ? "text-[#800020]" : ""}`}
                 >
                   {stage.name}
                 </p>
@@ -128,18 +136,39 @@ function Register() {
             {currentStep === 1 && (
               <div>
                 <div className="flex items-center gap-2 mb-6">
-                  <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    📝
+                  <div className="w-10 h-10 bg-[#D4AF371A] rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    <svg
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.0312 21.0335V19.0303C19.0312 17.9678 18.6091 16.9487 17.8578 16.1974C17.1064 15.446 16.0874 15.0239 15.0248 15.0239H9.0152C7.95263 15.0239 6.93359 15.446 6.18224 16.1974C5.43089 16.9487 5.00879 17.9678 5.00879 19.0303V21.0335"
+                        stroke="#D4AF37"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.0201 11.0177C14.2328 11.0177 16.0265 9.22397 16.0265 7.01129C16.0265 4.79861 14.2328 3.00488 12.0201 3.00488C9.8074 3.00488 8.01367 4.79861 8.01367 7.01129C8.01367 9.22397 9.8074 11.0177 12.0201 11.0177Z"
+                        stroke="#D4AF37"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </div>
                   <h2 className="text-xl font-semibold text-gray-900">
                     Personal Information
                   </h2>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-col gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Full Name <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-[#374151] mb-1">
+                      Full Name <span className="text-[#374151]">*</span>
                     </label>
                     <input
                       type="text"
@@ -153,8 +182,8 @@ function Register() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-[#374151] mb-1">
+                      Email Address <span className="text-[#374151]">*</span>
                     </label>
                     <input
                       type="email"
@@ -168,8 +197,8 @@ function Register() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Phone Number <span className="text-red-500">*</span>
+                      <label className="block text-sm font-bold text-[#374151] mb-1">
+                        Phone Number <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="tel"
@@ -183,8 +212,8 @@ function Register() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Date of Birth <span className="text-red-500">*</span>
+                      <label className="block text-sm font-bold text-[#374151] mb-1">
+                        Date of Birth <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         placeholder="mm/dd/yyyy"
@@ -199,8 +228,8 @@ function Register() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Present Address <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-[#374151] mb-1">
+                      Present Address <span className="text-[#374151]">*</span>
                     </label>
                     <input
                       type="text"
@@ -214,9 +243,9 @@ function Register() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-bold text-[#374151] mb-1">
                       Permanent Address (if different){" "}
-                      <span className="text-red-500">*</span>
+                      <span className="text-[#374151]">*</span>
                     </label>
                     <input
                       type="text"
@@ -233,7 +262,7 @@ function Register() {
                     <div>
                       <label
                         htmlFor="village"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-bold text-[#374151] mb-1"
                       >
                         Village
                       </label>
@@ -251,10 +280,10 @@ function Register() {
                     <div>
                       <label
                         htmlFor="localGovernmentArea"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-bold text-[#374151] mb-1"
                       >
                         Local Government Area{" "}
-                        <span className="text-red-500">*</span>
+                        <span className="text-[#374151]">*</span>
                       </label>
 
                       <input
@@ -273,9 +302,10 @@ function Register() {
                     <div>
                       <label
                         htmlFor="stateOfOrigin"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-bold text-[#374151] mb-1"
                       >
-                        State of Origin <span className="text-red-500">*</span>
+                        State of Origin{" "}
+                        <span className="text-[#374151]">*</span>
                       </label>
 
                       <input
@@ -292,9 +322,9 @@ function Register() {
                     <div>
                       <label
                         htmlFor="citizenship"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-bold text-[#374151] mb-1"
                       >
-                        Citizenship <span className="text-red-500">*</span>
+                        Citizenship <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="text"
@@ -309,23 +339,43 @@ function Register() {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Marital Status <span className="text-red-500">*</span>
-                    </label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-bold text-[#374151] mb-1">
+                        Marital Status <span className="text-[#374151]">*</span>
+                      </label>
 
-                    <select
-                      title="Select Marital status"
-                      name="selectStatus"
-                      value={formData.selectStatus}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
-                      required
-                    >
-                      <option value="">Select status</option>
-                      <option value="Single">Single</option>
-                      <option value="Married">Married</option>
-                    </select>
+                      <select
+                        title="Select Marital status"
+                        name="selectStatus"
+                        value={formData.selectStatus}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        required
+                      >
+                        <option value="">Select status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="citizenship"
+                        className="block text-sm font-bold text-[#374151] mb-1"
+                      >
+                        P.O Box
+                      </label>
+                      <input
+                        type="text"
+                        id="citizenship"
+                        name="citizenship"
+                        value={formData.poBox}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -335,62 +385,174 @@ function Register() {
             {currentStep === 2 && (
               <div>
                 <div className="flex items-center gap-2 mb-6">
-                  <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    📖
+                  <div className="w-10 h-10 bg-[#8000201A] rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    <svg
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.0156 9.01465H14.022"
+                        stroke="#800020"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.0186 7.01123V12.0192"
+                        stroke="#800020"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14.022 22.0355V18.0291C14.022 17.4978 13.811 16.9883 13.4353 16.6126C13.0596 16.2369 12.5501 16.0259 12.0188 16.0259C11.4875 16.0259 10.978 16.2369 10.6024 16.6126C10.2267 16.9883 10.0156 17.4978 10.0156 18.0291V22.0355"
+                        stroke="#800020"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.028 22.0353V5.6271C18.0279 5.44114 17.9761 5.25888 17.8782 5.10073C17.7804 4.94258 17.6405 4.81479 17.4741 4.73167L12.9138 2.45102C12.6358 2.31208 12.3292 2.23975 12.0184 2.23975C11.7076 2.23975 11.401 2.31208 11.123 2.45102L6.56268 4.73167C6.39633 4.81479 6.25641 4.94258 6.15858 5.10073C6.06076 5.25888 6.00889 5.44114 6.00879 5.6271V22.0353"
+                        stroke="#800020"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M18.0286 7.01123L21.4811 8.73799C21.6474 8.82112 21.7874 8.94891 21.8852 9.10706C21.983 9.26521 22.0349 9.44747 22.035 9.63343V20.0321C22.035 20.5633 21.8239 21.0729 21.4483 21.4485C21.0726 21.8242 20.5631 22.0353 20.0318 22.0353H4.00613C3.47485 22.0353 2.96533 21.8242 2.58965 21.4485C2.21398 21.0729 2.00293 20.5633 2.00293 20.0321V9.63343C2.00303 9.44747 2.0549 9.26521 2.15272 9.10706C2.25055 8.94891 2.39047 8.82112 2.55682 8.73799L6.00934 7.01123"
+                        stroke="#800020"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </div>
-                  <h2 className="text-xl font-semibold text-gray-900">
+                  <h2 className="text-[18px] font-bold text-gray-900">
                     Religious Information
                   </h2>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="flex flex-col gap-5 mb-8">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Religious Belief <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-[#374151] mb-3">
+                      Church name <span className="text-[#374151]">*</span>
                     </label>
-                    <select
+
+                    <input
+                      type="text"
+                      placeholder="Name of your local church"
                       name="religiousBelief"
-                      value={formData.religiousBelief}
+                      value={formData.churchName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      className="w-full px-4.75 py-4.5 border border-[#D1D5DB] rounded-lg placeholder:text-[#CCCCCC] focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
                       required
-                    >
-                      <option value="">Select belief</option>
-                      <option value="Christianity">Christianity</option>
-                      <option value="Islam">Islam</option>
-                      <option value="Others">Others</option>
-                    </select>
+                    ></input>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Church Name
+                    <label className="block text-sm font-bold text-[#374151] mb-3">
+                      Church address <span className="text-[#374151]">*</span>
                     </label>
-                    <input
-                      type="text"
-                      name="churchName"
-                      value={formData.churchName}
+                    <textarea
+                      name="churchAddress"
+                      value={formData.churchAddress}
                       onChange={handleInputChange}
                       placeholder="e.g. St. Mary's Church"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border h-22 border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
                     />
                   </div>
 
+                  <div className="flex flex-col md:flex-row gap-5 mb-8">
+                    <div className="w-full">
+                      <label className="block text-sm font-bold text-[#374151] mb-3">
+                        Are you a member?{" "}
+                        <span className="text-[#374151]">*</span>
+                      </label>
+
+                      <select
+                        title="Member status"
+                        name="memberStatus"
+                        value={formData.memberStatus}
+                        onChange={handleInputChange}
+                        className="w-full px-4.75 py-4.5 border border-[#D1D5DB] rounded-lg placeholder:text-[#CCCCCC] focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        required
+                      >
+                        <option value="">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </div>
+                    <div className="w-full">
+                      <label className="block text-sm font-bold text-[#374151] mb-3">
+                        Conversion Date
+                        <span className="text-[#374151]">*</span>
+                      </label>
+
+                      <input
+                        type="date"
+                        title="Member status"
+                        name="memberStatus"
+                        value={formData.conversionDate}
+                        onChange={handleInputChange}
+                        className="w-full px-4.75 py-4.5 border border-[#D1D5DB] rounded-lg placeholder:text-[#CCCCCC] focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Denominational Affiliation (if different from above)
+                    <label className="block text-sm font-bold text-[#374151] mb-3">
+                      Brief Testimony of Conversion * (Max 50 words)
                     </label>
+                    <textarea
+                      name="testimonyMessage"
+                      value={formData.testimonyMessage}
+                      onChange={handleInputChange}
+                      placeholder="Share your conversion experience..."
+                      className="w-full px-4 py-2 border h-29 border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                    />
+                    <span className="text-[12px] text-[#6B7280]">
+                      {formData.testimonyMessage.length}/300 characters
+                    </span>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-[#374151] mb-3">
+                      Pastor/Superintendent Name *
+                    </label>
+
                     <input
                       type="text"
-                      name="denominationalAffiliation"
-                      value={formData.denominationalAffiliation}
+                      name="pastorName"
+                      placeholder="Pastor/Superintendent name"
+                      value={formData.pastorName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      className="w-full px-4.75 py-4.5 border border-[#D1D5DB] rounded-lg placeholder:text-[#CCCCCC] focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
+                    />
+                  </div>
+
+                    <div>
+                    <label className="block text-sm font-bold text-[#374151] mb-3">
+                      Pastor's Complete Address *
+                    </label>
+
+                    <input
+                      type="text"
+                      name="pastorAddress"
+                      placeholder="Pastor/Superintendent address"
+                      value={formData.pastorAddress}
+                      onChange={handleInputChange}
+                      className="w-full px-4.75 py-4.5 border border-[#D1D5DB] rounded-lg placeholder:text-[#CCCCCC] focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
                     />
                   </div>
                 </div>
 
-                <div className="border-t pt-6">
+                <div className=" pt-6">
                   <div className="flex items-center gap-2 mb-6">
                     <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                       🎓
@@ -400,11 +562,11 @@ function Register() {
                     </h2>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="flex flex-col gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-[#374151] mb-1">
                         Elementary School{" "}
-                        <span className="text-red-500">*</span>
+                        <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="text"
@@ -418,7 +580,7 @@ function Register() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Year attended
                         </label>
                         <input
@@ -433,8 +595,9 @@ function Register() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Secondary School <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-[#374151] mb-1">
+                        Secondary School{" "}
+                        <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="text"
@@ -448,7 +611,7 @@ function Register() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Year attended
                         </label>
                         <input
@@ -463,7 +626,7 @@ function Register() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-[#374151] mb-1">
                         College/JSS (Optional)
                       </label>
                       <input
@@ -477,7 +640,7 @@ function Register() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Year attended
                         </label>
                         <input
@@ -492,8 +655,9 @@ function Register() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Senior Secondary <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-[#374151] mb-1">
+                        Senior Secondary{" "}
+                        <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="text"
@@ -507,7 +671,7 @@ function Register() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Year attended
                         </label>
                         <input
@@ -537,11 +701,11 @@ function Register() {
                   </h2>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="flex flex-col gap-5 mb-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Exam Number <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-[#374151] mb-1">
+                        Exam Number <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="text"
@@ -554,8 +718,8 @@ function Register() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Exam Year <span className="text-red-500">*</span>
+                      <label className="block text-sm font-medium text-[#374151] mb-1">
+                        Exam Year <span className="text-[#374151]">*</span>
                       </label>
                       <input
                         type="text"
@@ -575,7 +739,7 @@ function Register() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           English Language
                         </label>
                         <input
@@ -587,7 +751,7 @@ function Register() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Mathematics
                         </label>
                         <input
@@ -599,7 +763,7 @@ function Register() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Integrated Science
                         </label>
                         <input
@@ -611,7 +775,7 @@ function Register() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-[#374151] mb-1">
                           Social Studies
                         </label>
                         <input
@@ -626,9 +790,9 @@ function Register() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-[#374151] mb-1">
                       What is the furthest level of education you attained?{" "}
-                      <span className="text-red-500">*</span>
+                      <span className="text-[#374151]">*</span>
                     </label>
                     <textarea
                       name="furthestEducation"
@@ -653,7 +817,7 @@ function Register() {
                     />
                     <label
                       htmlFor="acceptTerms"
-                      className="text-xs text-gray-700"
+                      className="text-xs text-[#374151]"
                     >
                       I have reviewed and accept the above information to be
                       correct and complies with the admission and registration
@@ -671,7 +835,7 @@ function Register() {
                 type="button"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="px-6 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 text-sm font-medium text-[#374151] border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Previous
               </button>

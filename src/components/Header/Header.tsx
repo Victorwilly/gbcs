@@ -18,7 +18,7 @@ function Header() {
   }
 
   return (
-    <header className="border-b border-gray-200 sticky top-0 bg-white z-10">
+    <header className="border-b z-1000 border-gray-200 sticky top-0 bg-white">
       <div className="max-w-480 mx-auto px-4 md:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between gap-8">
           {/* Logo */}

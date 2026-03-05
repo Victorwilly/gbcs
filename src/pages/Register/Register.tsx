@@ -100,8 +100,8 @@ function Register() {
     <div className="min-h-screen bg-[#fff8e7]">
       <RegisterHeader />
 
-      <div className="max-w-250 mx-auto  py-8 px-4">
-        <div className="bg-white rounded-lg  p-6 md:p-8">
+      <div className="max-w-250 mx-auto py-8 px-3">
+        <div className="bg-white rounded-lg py-6 px-2.5 md:p-8">
           {/* form wrapper header */}
           <div className="mb-8">
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1032,12 +1032,12 @@ function Register() {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
+            <div className="flex flex-col w-full gap-2 md:flex-row md:w-auto items-center justify-between mt-8 pt-6 border-t border-gray-200">
               <button
                 type="button"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="px-6 flex items-center gap-2 py-2 text-sm font-bold hover:cursor-pointer text-[#6B7280] border-2 border-[#D1D5DB] rounded-lg hover:bg-gray-50  disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 w-full md:w-auto  flex items-center justify-center md:justify-start gap-2 py-2 text-sm font-bold hover:cursor-pointer text-[#6B7280] border-2 border-[#D1D5DB] rounded-lg hover:bg-gray-50  disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <svg
                   width="18"
@@ -1067,7 +1067,7 @@ function Register() {
               {currentStep === 3 ? (
                 <button
                   type="submit"
-                  className="pr-6 pl-4 py-2 flex items-center gap-2 bg-[#800020] hover:bg-red-800 hover:cursor-pointer text-white text-sm font-bold rounded-lg"
+                  className="pr-6 pl-4 py-2 w-full justify-center md:justify-start md:w-auto flex items-center gap-2 bg-[#800020] hover:bg-red-800 hover:cursor-pointer text-white text-sm font-bold rounded-lg"
                 >
                   <svg
                     width="18"
@@ -1093,7 +1093,7 @@ function Register() {
                     handleNext();
                     window.scrollTo({ top: 0 });
                   }}
-                  className="px-6 py-2 flex items-center gap-2 bg-[#D4AF37] hover:bg-yellow-60 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
+                  className="px-6 py-2 w-full md:w-auto justify-center md:justify-start flex items-center gap-2 bg-[#D4AF37] hover:bg-yellow-60 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
                 >
                   Next Step
                   <svg

@@ -8,7 +8,9 @@ import Contact from "./pages/Contact/Contact";
 import Admissions from "./pages/Admissions/Admissions";
 import Register from "./pages/Register/Register";
 
+
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

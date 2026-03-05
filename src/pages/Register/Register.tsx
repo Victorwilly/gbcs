@@ -34,19 +34,20 @@ function Register() {
     collegeSchoolDates: "",
     collegeSchoolCertificates: "",
     secondaryYear: "",
-    colligJss: "",
-    jssYear: "",
     seniorSecondary: "",
-    seniorSecondaryYear: "",
 
     // Step 3 - Academic Background
-    examNumber: "",
-    examYear: "",
-    englishLanguage: "",
-    mathematics: "",
-    integratedScience: "",
-    socialStudies: "",
-    furthestEducation: "",
+    startMonth: "",
+    startYear: "",
+    studyMode: "",
+    programType: "",
+    studentDiscipline: "",
+    currentOccupation: "",
+    studentSponsor: "",
+    enrollPastorName: "",
+    enrollPastorRelationship: "",
+    enrollKinName: "",
+    enrollKinRelationship: "",
     acceptTerms: false,
   });
 
@@ -717,44 +718,184 @@ function Register() {
             {currentStep === 3 && (
               <div>
                 <div className="flex items-center gap-2 mb-6">
-                  <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    📚
+                  <div className="w-10 h-10 bg-[#D4AF371A] rounded-full flex items-center justify-center">
+                    <svg
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.4548 10.9397C21.6341 10.8606 21.7863 10.7306 21.8925 10.5659C21.9986 10.4011 22.0541 10.2089 22.0521 10.0129C22.0501 9.81695 21.9906 9.62588 21.8811 9.46338C21.7715 9.30088 21.6167 9.17409 21.4358 9.09871L12.8511 5.18846C12.5901 5.06942 12.3066 5.00781 12.0197 5.00781C11.7329 5.00781 11.4494 5.06942 11.1884 5.18846L2.60466 9.09471C2.42635 9.17281 2.27465 9.30117 2.16813 9.46411C2.06161 9.62706 2.00488 9.81751 2.00488 10.0122C2.00488 10.2068 2.06161 10.3973 2.16813 10.5602C2.27465 10.7232 2.42635 10.8515 2.60466 10.9296L11.1884 14.8439C11.4494 14.9629 11.7329 15.0246 12.0197 15.0246C12.3066 15.0246 12.5901 14.9629 12.8511 14.8439L21.4548 10.9397Z"
+                        stroke="#D4AF37"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M22.0342 10.0161V16.0257"
+                        stroke="#D4AF37"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6.00879 12.5195V16.0251C6.00879 16.8221 6.64194 17.5863 7.76896 18.1499C8.89599 18.7134 10.4246 19.0299 12.0184 19.0299C13.6123 19.0299 15.1408 18.7134 16.2678 18.1499C17.3949 17.5863 18.028 16.8221 18.028 16.0251V12.5195"
+                        stroke="#D4AF37"
+                        stroke-width="2.40385"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </div>
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    Academic Background
+                  <h2 className="text-[18px] font-bold text-gray-900">
+                    Enrollment Information
                   </h2>
                 </div>
 
                 <div className="flex flex-col gap-5 mb-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-[#374151] mb-1">
-                        Exam Number <span className="text-[#374151]">*</span>
+                      <label className="block text-sm font-bold text-[#374151] mb-1">
+                        Start Month *
                       </label>
-                      <input
-                        type="text"
-                        name="examNumber"
-                        value={formData.examNumber}
+                      <select
+                        title="Select Marital status"
+                        name="startMonth"
+                        value={formData.startMonth}
                         onChange={handleInputChange}
-                        placeholder="WAEC/NECO"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        className="w-full px-4 py-3 border text-[#1F2937] border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
                         required
-                      />
+                      >
+                        <option value="">Select status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                      </select>
                     </div>
+
                     <div>
-                      <label className="block text-sm font-medium text-[#374151] mb-1">
-                        Exam Year <span className="text-[#374151]">*</span>
+                      <label
+                        htmlFor="startYear"
+                        className="block text-sm font-bold text-[#374151] mb-1"
+                      >
+                        Start Year *
                       </label>
                       <input
                         type="text"
-                        name="examYear"
-                        value={formData.examYear}
+                        id="startYear"
+                        name="startYear"
+                        placeholder="2025"
+                        value={formData.startYear}
                         onChange={handleInputChange}
-                        placeholder="e.g. 2022"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        className="w-full px-4 py-2 border text-[#1F2937] border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
                         required
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="studyMode"
+                      className="block text-sm font-bold text-[#374151] mb-1"
+                    >
+                      Study Mode *
+                    </label>
+                    <select
+                      id="studyMode"
+                      title="Select study mode"
+                      name="studyMode"
+                      value={formData.studyMode}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border text-[#1F2937] border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
+                    >
+                      <option value="">Select study mode</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="programType"
+                      className="block text-sm font-bold text-[#374151] mb-1"
+                    >
+                      Program Type *
+                    </label>
+                    <select
+                      id="programType"
+                      title="Select program"
+                      name="programType"
+                      value={formData.programType}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border text-[#1F2937] border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
+                    >
+                      <option value="">Select program</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="studentDiscipline"
+                      className="block text-sm font-bold text-[#374151] mb-1"
+                    >
+                      Discipline/Specialization *
+                    </label>
+                    <select
+                      id="studentDiscipline"
+                      title="Select Discipline"
+                      name="studentDiscipline"
+                      value={formData.studentDiscipline}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-[#D1D5DB] text-[#1F2937] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
+                    >
+                      <option value="">Select discipline</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="currentOccupation"
+                      className="block text-sm font-bold text-[#374151] mb-1"
+                    >
+                      Current Occupation
+                    </label>
+                    <input
+                      type="text"
+                      id="currentOccupation"
+                      name="currentOccupation"
+                      placeholder="e.g Engineer"
+                      value={formData.currentOccupation}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border text-[#1F2937] border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="studentSponsor"
+                      className="block text-sm font-bold text-[#374151] mb-1"
+                    >
+                      Who will sponsor your studies? *
+                    </label>
+                    <input
+                      type="text"
+                      id="studentSponsor"
+                      name="studentSponsor"
+                      placeholder="Self, Church, Organization, etc."
+                      value={formData.studentSponsor}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border text-[#1F2937] border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                      required
+                    />
                   </div>
 
                   <div className="bg-yellow-50 p-4 rounded-lg">

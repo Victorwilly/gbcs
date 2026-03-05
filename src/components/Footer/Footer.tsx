@@ -256,11 +256,21 @@ function Footer() {
             Quick Links
           </h3>
           <ul className="space-y-3 text-sm">
-            <li>About Us</li>
-            <li>Academic Programs</li>
-            <li>Admissions</li>
-            <li>Student Portal</li>
-            <li>Contact Us</li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/programs">Academic Programs</Link>
+            </li>
+            <li>
+              <Link to="/admissions">Admissions</Link>
+            </li>
+            <li>
+              <Link to="/portal/student">Student Portal</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
           </ul>
         </div>
 

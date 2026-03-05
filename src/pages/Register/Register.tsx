@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RegisterHeader from "./RegisterHeader";
 
 function Register() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -96,10 +97,12 @@ function Register() {
   ];
 
   return (
-    <div className="min-h-screen bg-yellow-50 py-8 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-          {/* Header */}
+    <div className="min-h-screen bg-[#fff8e7]">
+      <RegisterHeader />
+
+      <div className="max-w-250 mx-auto  py-8 px-4">
+        <div className="bg-white rounded-lg  p-6 md:p-8">
+          {/* form wrapper header */}
           <div className="mb-8">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h1 className="text-2xl tracking-[-.3px] font-bold text-gray-900 mb-2">
@@ -123,6 +126,7 @@ function Register() {
                 </div>
               ))}
             </div>
+
             <div className="flex items-center justify-between gap-2 mt-2.5">
               {stepStage.map((stage, index) => (
                 <p

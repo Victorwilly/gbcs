@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import logo from "/images/logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -22,9 +23,9 @@ function Header() {
       <div className="max-w-480 mx-auto px-4 md:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between gap-8">
           {/* Logo */}
-          <div className="shrink-0">
-            <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-          </div>
+          <Link to="/" className="w-50.25 h-max" aria-label="home page header link">
+            <img src={logo} alt="Logo" className="w-full h-max"  aria-hidden/>
+          </Link>
 
           {/* Nav Links */}
           <nav className="hidden md:flex items-center gap-8">

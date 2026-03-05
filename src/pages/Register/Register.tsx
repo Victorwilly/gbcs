@@ -600,11 +600,15 @@ function Register() {
                       <h3 className="block text-[20px] font-bold text-[#374151] mb-6">
                         Secondary School *
                       </h3>
-                      <label className="block text-[14px] font-medium text-[#374151] mb-3">
+                      <label
+                        htmlFor="secondarySchool"
+                        className="block text-[14px] font-medium text-[#374151] mb-3"
+                      >
                         School Name
                       </label>
                       <input
                         type="text"
+                        id="secondarySchool"
                         name="secondarySchool"
                         placeholder=" "
                         value={formData.secondarySchool}
@@ -661,13 +665,17 @@ function Register() {
                         Fill this section if applicable
                       </span>
 
-                      <label className="block text-[14px] font-semibold text-[#374151] mb-3">
+                      <label
+                        htmlFor="collegeSchool"
+                        className="block text-[14px] font-semibold text-[#374151] mb-3"
+                      >
                         School Name
                       </label>
                       <input
                         type="text"
                         name="collegeSchool"
                         placeholder=" "
+                        id="collegeSchool"
                         value={formData.collegeSchool}
                         onChange={handleInputChange}
                         className="w-full px-4 py-2 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
@@ -898,97 +906,122 @@ function Register() {
                     />
                   </div>
 
-                  <div className="bg-yellow-50 p-4 rounded-lg">
-                    <h3 className="text-sm font-semibold text-gray-900 mb-3">
-                      Exam Results
+                  <div className="bg-[#FFF8E7] p-4 rounded-lg">
+                    <h3 className="text-[18px] font-semibold text-[#111827] mb-5">
+                      Referee 1: Your Pastor/Superintendent *
                     </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-[#374151] mb-1">
-                          English Language
+                        <label
+                          htmlFor="enrollPastorName"
+                          className="block text-sm font-medium text-[#374151] mb-1"
+                        >
+                          Full Name
                         </label>
                         <input
+                          placeholder=""
                           type="text"
-                          name="englishLanguage"
-                          value={formData.englishLanguage}
+                          id="enrollPastorName"
+                          name="enrollPastorName"
+                          value={formData.enrollPastorName}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                          className="w-full px-4 py-2 border bg-white border-[#EFDB9A] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
                         />
                       </div>
+
                       <div>
-                        <label className="block text-sm font-medium text-[#374151] mb-1">
-                          Mathematics
+                        <label
+                          htmlFor="enrollPastorRelationship"
+                          className="block text-sm font-medium text-[#374151] mb-1"
+                        >
+                          Relationship
                         </label>
                         <input
                           type="text"
-                          name="mathematics"
-                          value={formData.mathematics}
+                          id="enrollPastorRelationship"
+                          name="enrollPastorRelationship"
+                          value={formData.enrollPastorRelationship}
+                          placeholder="Pastor/Superintendent"
                           onChange={handleInputChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#374151] mb-1">
-                          Integrated Science
-                        </label>
-                        <input
-                          type="text"
-                          name="integratedScience"
-                          value={formData.integratedScience}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-[#374151] mb-1">
-                          Social Studies
-                        </label>
-                        <input
-                          type="text"
-                          name="socialStudies"
-                          value={formData.socialStudies}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                          className="w-full px-4 py-2 border bg-white border-[#EFDB9A] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-[#374151] mb-1">
-                      What is the furthest level of education you attained?{" "}
-                      <span className="text-[#374151]">*</span>
-                    </label>
-                    <textarea
-                      name="furthestEducation"
-                      value={formData.furthestEducation}
-                      onChange={handleInputChange}
-                      placeholder="Describe your furthest level of education attained..."
-                      rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none resize-none"
-                      required
-                    />
+                  <div className="bg-[#F9FAFB] p-4 rounded-lg">
+                    <h3 className="text-[18px] font-semibold text-[#111827] mb-5">
+                      Referee 1: Your Pastor/Superintendent *
+                    </h3>
+                    <div className="grid grid-cols-1 gap-4">
+                      <div>
+                        <label
+                          htmlFor="enrollKinName"
+                          className="block text-sm font-medium text-[#374151] mb-1"
+                        >
+                          Full Name
+                        </label>
+                        <input
+                          placeholder=""
+                          type="text"
+                          id="enrollKinName"
+                          name="enrollKinName"
+                          value={formData.enrollKinName}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-2 border bg-white border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="enrollKinRelationship"
+                          className="block text-sm font-medium text-[#374151] mb-1"
+                        >
+                          Relationship
+                        </label>
+                        <input
+                          type="text"
+                          id="enrollKinRelationship"
+                          name="enrollKinRelationship"
+                          value={formData.enrollKinRelationship}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-2 border bg-white border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none"
+                        />
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="flex items-start gap-2 p-3 bg-red-50 rounded-lg border border-red-200">
-                    <input
-                      type="checkbox"
-                      name="acceptTerms"
-                      id="acceptTerms"
-                      checked={formData.acceptTerms}
-                      onChange={handleInputChange}
-                      className="mt-1"
-                      required
-                    />
-                    <label
-                      htmlFor="acceptTerms"
-                      className="text-xs text-[#374151]"
-                    >
-                      I have reviewed and accept the above information to be
-                      correct and complies with the admission and registration
-                      policy. I promise to uphold the rules and regulations of
-                      the school.
-                    </label>
+                  <div className=" gap-2 p-3 bg-[#8000200D] rounded-lg border-2 border-[#80002033]">
+                    <span className="font-semibold text-[#111827]">
+                      The Pledge
+                    </span>
+
+                    <p className="text-[14px] text-[#374151]  pt-5.5">
+                      I affirm that the information given in this document is
+                      correct. I also pledge to abide by additional rules and
+                      regulations in addition to those in the GBIS prospectus
+                      and student handbook as will be set forth by the
+                      Seminary's Governing Council or Administrative Council
+                      throughout my stay in the seminary.
+                    </p>
+
+                    <div className="flex gap-2 mt-10.5 items-center">
+                      <input
+                        type="checkbox"
+                        name="acceptTerms"
+                        id="acceptTerms"
+                        checked={formData.acceptTerms}
+                        onChange={handleInputChange}
+                        required
+                      />
+                      <label
+                        htmlFor="acceptTerms"
+                        className="text-xs font-bold text-[#111827]"
+                      >
+                        I agree to the pledge and affirm that all information
+                        provided is accurate *
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1000,16 +1033,53 @@ function Register() {
                 type="button"
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
-                className="px-6 py-2 text-sm font-medium hover:cursor-pointer text-[#374151] border border-gray-300 rounded-lg hover:bg-gray-50  disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 flex items-center gap-2 py-2 text-sm font-bold hover:cursor-pointer text-[#6B7280] border-2 border-[#D1D5DB] rounded-lg hover:bg-gray-50  disabled:opacity-50 disabled:cursor-not-allowed"
               >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.02 19.0305L5.00879 12.0193L12.02 5.00806"
+                    stroke="#374151"
+                    stroke-width="2.40385"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M19.0312 12.0193H5.00879"
+                    stroke="#374151"
+                    stroke-width="2.40385"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 Previous
               </button>
 
               {currentStep === 3 ? (
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-red-700 hover:bg-red-800 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
+                  className="pr-6 pl-4 py-2 flex items-center gap-2 bg-[#800020] hover:bg-red-800 hover:cursor-pointer text-white text-sm font-bold rounded-lg"
                 >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.0315 6.00952L9.01387 17.0271L4.00586 12.0191"
+                      stroke="white"
+                      stroke-width="2.40385"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                   Submit Application
                 </button>
               ) : (
@@ -1019,9 +1089,31 @@ function Register() {
                     handleNext();
                     window.scrollTo({ top: 0 });
                   }}
-                  className="px-6 py-2 bg-yellow-500 hover:bg-yellow-60 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
+                  className="px-6 py-2 flex items-center gap-2 bg-[#D4AF37] hover:bg-yellow-60 hover:cursor-pointer text-white text-sm font-medium rounded-lg"
                 >
                   Next Step
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.00879 12.0193H19.0312"
+                      stroke="white"
+                      stroke-width="2.40385"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.0195 5.0083L19.0307 12.0195L12.0195 19.0307"
+                      stroke="white"
+                      stroke-width="2.40385"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </button>
               )}
             </div>

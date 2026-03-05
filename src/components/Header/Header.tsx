@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -11,6 +11,11 @@ const navLinks = [
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const location = useLocation();
+
+  if (location.pathname === "/register") {
+    return null;
+  }
 
   return (
     <header className="border-b border-gray-200 sticky top-0 bg-white z-10">

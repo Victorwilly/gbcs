@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import footerLogo from "/images/footerLogo.png";
 
 function Footer() {
   return (
@@ -6,10 +7,18 @@ function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* logo & tagline */}
         <div className="space-y-4">
-          <div className="w-16 h-16 bg-gray-500 rounded-full" />
-          <h2 className="text-lg font-semibold text-white">GRACE BIBLE</h2>
-          <p className="text-sm">Institute &amp; Seminary</p>
-          <p className="text-xs italic">
+          <Link to="/" aria-label="back to home footer link">
+            <div className="w-65 md:w-47.5 h-max">
+              <img
+                aria-hidden
+                src={footerLogo}
+                alt="Grace Bible Institute & Seminary Logo"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </Link>
+
+          <p className="text-xs md:text-[14px] py-3">
             &quot;Raising watchmen, equipping ministers, transforming
             lives.&quot;
           </p>
@@ -288,7 +297,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="mt-12 border-t flex flex-col gap-4 border-gray-700 pt-6 text-center text-xs text-gray-400">
+      <div className="mt-12 border-t-2 flex flex-col gap-4 border-gray-700 pt-6 text-center text-xs text-gray-400">
         <span>
           © 2026 Grace Bible Institute &amp; Seminary. All rights reserved.
         </span>

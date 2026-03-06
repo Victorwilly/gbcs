@@ -1,4 +1,5 @@
 export default function About() {
+  
   const institutionalGoals = [
     {
       title: "Affiliated to:",

@@ -312,7 +312,7 @@ export default function Contact() {
                 </div>
 
                 {/* Subject */}
-                <div className="mb-[60px]">
+                <div className="mb-15">
                   <label
                     htmlFor="subject"
                     className="block text-sm font-semibold text-[#374151] mb-2"

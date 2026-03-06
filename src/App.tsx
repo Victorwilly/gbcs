@@ -11,6 +11,8 @@ import Login from "./pages/Login/Login";
 import LoginStudent from "./pages/Login/LoginStudent";
 import LoginLecturer from "./pages/Login/LoginLecturer";
 import LoginAdministrator from "./pages/Login/LoginAdmistrator";
+import DashboardLayout from "./components/Layout/DashboardLayout";
+import AdminHome from "./pages/Dashboard/Admin/AdminHome";
 
 function App() {
   return (
@@ -28,6 +30,21 @@ function App() {
         <Route path="/login/administrator" element={<LoginAdministrator />} />
         <Route path="/login/student" element={<LoginStudent />} />
         <Route path="/login/lecturer" element={<LoginLecturer />} />
+      </Route>
+
+      {/* dashboard routes */}
+      <Route path="/dashboard" element={<DashboardLayout />}>
+        {/* admin routes */}
+        <Route path="/dashboard/admin" element={<AdminHome />} />
+        {/* <Route path="/dashboard/admin/students" element={<AdminHome />} /> */}
+        {/* <Route path="/dashboard/admin/staffs" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/courses" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/timetable" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/feesandpayments" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/reports" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/announcements" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/hostelmanagement" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/settings" element={<DashboardLayout />} /> */}
       </Route>
     </Routes>
   );

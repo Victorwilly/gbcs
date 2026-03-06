@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import LoginHeader from "./component/LoginHeader";
+
 
 const Login = () => {
   return (
@@ -20,7 +22,7 @@ const Login = () => {
           {/* role cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Administrator */}
-            <div className="bg-[#800020] rounded-lg p-8 text-center flex flex-col items-center justify-center min-h-62.5 cursor-pointer hover:shadow-lg transition-shadow">
+            <Link to="/login/administrator" className="bg-[#800020] rounded-lg p-8 text-center flex flex-col items-center justify-center min-h-62.5 cursor-pointer hover:shadow-lg transition-shadow">
               <div className="w-18 h-18 bg-[rgba(255,255,255,0.2)] rounded-full flex items-center justify-center mb-4">
                 {/* shield icon placeholder */}
                 <div className="w-12 h-12 rounded" aria-hidden>
@@ -47,10 +49,10 @@ const Login = () => {
               <p className="text-white/80 text-sm">
                 Manage institution operations
               </p>
-            </div>
+            </Link>
 
             {/* Student */}
-            <div className="bg-[#D4AF37] rounded-lg p-8 text-center flex flex-col items-center justify-center min-h-62.5 cursor-pointer hover:shadow-lg transition-shadow">
+            <Link to="/login/student" className="bg-[#D4AF37] rounded-lg p-8 text-center flex flex-col items-center justify-center min-h-62.5 cursor-pointer hover:shadow-lg transition-shadow">
               <div className="w-18 h-18 bg-[rgba(255,255,255,0.3)] rounded-full flex items-center justify-center mb-4">
                 {/* graduation cap icon placeholder */}
                 <div className="w-12 h-12  rounded" aria-hidden>
@@ -91,10 +93,10 @@ const Login = () => {
               <p className="text-[#FFFFFFCC] text-sm">
                 Access your academic portal
               </p>
-            </div>
+            </Link>
 
             {/* Lecturer */}
-            <div className="bg-[#2D5016] rounded-lg p-8 text-center flex flex-col items-center justify-center min-h-62.5 cursor-pointer hover:shadow-lg transition-shadow">
+            <Link to="/login/lecturer" className="bg-[#2D5016] rounded-lg p-8 text-center flex flex-col items-center justify-center min-h-62.5 cursor-pointer hover:shadow-lg transition-shadow">
               <div className="w-18 h-18 bg-[rgba(255,255,255,0.2)] rounded-full flex items-center justify-center mb-4">
                 {/* user icon placeholder */}
                 <div className="w-12 h-12 rounded" aria-hidden>
@@ -142,7 +144,7 @@ const Login = () => {
               <p className="text-white/80 text-sm">
                 Manage courses and students
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

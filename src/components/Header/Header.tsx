@@ -23,8 +23,12 @@ function Header() {
       <div className="max-w-480 mx-auto px-4 md:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between gap-8">
           {/* Logo */}
-          <Link to="/" className="w-50.25 h-max" aria-label="home page header link">
-            <img src={logo} alt="Logo" className="w-full h-max"  aria-hidden/>
+          <Link
+            to="/"
+            className="w-50.25 h-max"
+            aria-label="home page header link"
+          >
+            <img src={logo} alt="Logo" className="w-full h-max" aria-hidden />
           </Link>
 
           {/* Nav Links */}
@@ -48,13 +52,13 @@ function Header() {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button
-              type="button"
+            <Link
+              to="/login"
               aria-label="Log in"
               className="text-sm font-medium text-gray-700 hover:text-gray-900"
             >
               Log In
-            </button>
+            </Link>
             <Link
               to="/register"
               type="button"
@@ -117,16 +121,19 @@ function Header() {
                 ))}
 
                 <div className="flex gap-3 mt-4">
-                  <button
+                  <Link
+                    to="/login"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     type="button"
                     aria-label="Log in"
                     className="text-sm font-medium text-gray-700 hover:text-gray-900 flex-1"
                   >
                     Log In
-                  </button>
+                  </Link>
                   <Link
                     to="/register"
                     type="button"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Register"
                     className="flex-1 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-medium rounded"
                   >

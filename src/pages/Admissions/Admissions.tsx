@@ -284,7 +284,7 @@ export default function Admissions() {
             <h3 className="text-[20px] font-bold text-[Heading/H6/fontSize] py-4 rounded-t-lg mb-0">
               Application Form from Each Sem Plan Chosen
             </h3>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto rounded-2xl">
               <table className="w-full">
                 <thead>
                   <tr className="bg-red-900 rounded-t-2xl text-white">
@@ -317,7 +317,7 @@ export default function Admissions() {
             <h3 className="text-[20px] font-bold text-[#111827] py-4 mb-0">
               Tuition Plan (Per Semester)
             </h3>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto rounded-2xl">
               <table className="w-full">
                 <thead>
                   <tr className="bg-[#D4AF37] text-white">

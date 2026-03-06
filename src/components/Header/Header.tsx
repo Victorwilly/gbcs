@@ -14,7 +14,14 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const location = useLocation();
 
-  if (location.pathname === "/register") {
+  const hiddenLinks: Record<string, string> = {
+    "/register": "Register",
+    "/login": "Login",
+  };
+
+  const path = location.pathname;
+
+  if (hiddenLinks[path]) {
     return null;
   }
 

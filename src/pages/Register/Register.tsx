@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RegisterHeader from "./RegisterHeader";
+import RegisterHeader from "./component/RegisterHeader";
 
 function Register() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -100,7 +100,7 @@ function Register() {
     <div className="min-h-screen bg-[#fff8e7]">
       <RegisterHeader />
 
-      <div className="max-w-250 mx-auto py-8 px-3">
+      <main className="max-w-250 mx-auto py-8 px-3">
         <div className="bg-white rounded-lg py-6 px-2.5 md:p-8">
           {/* form wrapper header */}
           <div className="mb-8">
@@ -1123,7 +1123,7 @@ function Register() {
             </div>
           </form>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

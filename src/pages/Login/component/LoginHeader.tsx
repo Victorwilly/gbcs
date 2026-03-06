@@ -38,11 +38,11 @@ function LoginHeader() {
 
       {/* title area */}
       <div className="mt-6 text-center">
-        <h1 className="text-[32px] sm:text-[40px] font-bold text-white">
+        <h1 className="text-[26px] sm:text-[40px] font-bold text-white">
           Academic Programs
         </h1>
 
-        <p className="mt-4 text-[14px]md:text-[18px] text-white/80">
+        <p className="mt-4 text-[12px] md:text-[18px] text-white/80">
           Comprehensive theological training for every level of ministry service
         </p>
       </div>

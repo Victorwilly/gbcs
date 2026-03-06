@@ -118,13 +118,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/"
+                to="/login"
                 className="px-6 py-3 bg-[#D4AF37] hover:bg-yellow-600 text-white font-semibold rounded"
               >
                 Access Dashboard
               </Link>
               <Link
-                to="/"
+                to="/register"
                 className="px-6 py-3 border-2 bg-[#800020] text-white hover:bg-red-900 font-semibold rounded"
               >
                 Apply Now

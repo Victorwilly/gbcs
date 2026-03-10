@@ -6,16 +6,16 @@ import heart from "/icons/heart.svg";
 import people from "/icons/people.svg";
 import globe from "/icons/globe.svg";
 
-// academics icons
-import medal from "/icons/medal.svg";
-import paper from "/icons/paper.svg";
-import books from "/icons/books.svg";
-import graduate from "/icons/graduate.svg";
+// // academics icons
+// import medal from "/icons/medal.svg";
+// import paper from "/icons/paper.svg";
+// import books from "/icons/books.svg";
+// import graduate from "/icons/graduate.svg";
 
 // student image
 import download from "/icons/download.svg";
 import papers from "/icons/papers.svg";
-import dollars  from "/icons/dollars.svg";
+import dollars from "/icons/dollars.svg";
 import calls from "/icons/calls.svg";
 
 export default function Home() {
@@ -53,26 +53,138 @@ export default function Home() {
     },
   ];
 
-  const programs = [
+  const programCards = [
     {
-      name: "Certificate Programs",
-      description: "Short-term focused training",
-      icon: medal,
+      icon: (
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.0567 15.0386L19.8242 24.9856C19.844 25.1027 19.8276 25.2231 19.7771 25.3306C19.7266 25.4382 19.6445 25.5277 19.5418 25.5873C19.439 25.647 19.3205 25.6738 19.2021 25.6642C19.0837 25.6547 18.9711 25.6092 18.8792 25.5339L14.7025 22.3991C14.5009 22.2484 14.256 22.167 14.0043 22.167C13.7526 22.167 13.5077 22.2484 13.306 22.3991L9.12236 25.5327C9.03057 25.6079 8.91804 25.6533 8.79978 25.6629C8.68151 25.6724 8.56315 25.6457 8.46047 25.5863C8.35779 25.5268 8.27569 25.4375 8.2251 25.3301C8.17452 25.2228 8.15787 25.1026 8.17736 24.9856L9.9437 15.0386"
+            stroke="#2563EB"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 16.3335C17.866 16.3335 21 13.1995 21 9.3335C21 5.4675 17.866 2.3335 14 2.3335C10.134 2.3335 7 5.4675 7 9.3335C7 13.1995 10.134 16.3335 14 16.3335Z"
+            stroke="#2563EB"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      ),
+      title: "Certificate Programs",
+      color: "bg-[#EFF6FF]",
+      items: ["Practical Ministry", "Chaplaincy & Security Studies"],
     },
     {
-      name: "Diploma Programs",
-      description: "Comprehensive professional training",
-      icon: paper,
+      icon: (
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22.1665 19.8333V5.83333C22.1665 5.21449 21.9207 4.621 21.4831 4.18342C21.0455 3.74583 20.452 3.5 19.8332 3.5H4.6665"
+            stroke="#16A34A"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.3335 24.5H23.3335C23.9523 24.5 24.5458 24.2542 24.9834 23.8166C25.421 23.379 25.6668 22.7855 25.6668 22.1667V21C25.6668 20.6906 25.5439 20.3938 25.3251 20.175C25.1063 19.9562 24.8096 19.8333 24.5002 19.8333H12.8335C12.5241 19.8333 12.2273 19.9562 12.0085 20.175C11.7897 20.3938 11.6668 20.6906 11.6668 21V22.1667C11.6668 22.7855 11.421 23.379 10.9834 23.8166C10.5458 24.2542 9.95233 24.5 9.3335 24.5ZM9.3335 24.5C8.71466 24.5 8.12116 24.2542 7.68358 23.8166C7.246 23.379 7.00016 22.7855 7.00016 22.1667V5.83333C7.00016 5.21449 6.75433 4.621 6.31675 4.18342C5.87916 3.74583 5.28567 3.5 4.66683 3.5C4.04799 3.5 3.4545 3.74583 3.01691 4.18342C2.57933 4.621 2.3335 5.21449 2.3335 5.83333V8.16667C2.3335 8.47609 2.45641 8.77283 2.6752 8.99162C2.894 9.21042 3.19074 9.33333 3.50016 9.33333H7.00016"
+            stroke="#16A34A"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      ),
+      title: "Diploma Programs",
+      color: "bg-[#F0FDF4]",
+      items: ["Practical Ministry", "Chaplaincy & Security Studies"],
     },
     {
-      name: "Undergraduate Degree",
-      description: "Bachelor of Theology",
-      icon: graduate,
+      icon: (
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24.9898 12.7424C25.1986 12.6503 25.3759 12.4989 25.4995 12.307C25.6232 12.1152 25.6878 11.8912 25.6855 11.663C25.6831 11.4347 25.6138 11.2121 25.4862 11.0229C25.3586 10.8336 25.1783 10.6859 24.9676 10.5981L14.9681 6.04342C14.6641 5.90476 14.3339 5.83301 13.9998 5.83301C13.6656 5.83301 13.3354 5.90476 13.0314 6.04342L3.0331 10.5934C2.82539 10.6844 2.6487 10.8339 2.52463 11.0237C2.40055 11.2135 2.33447 11.4353 2.33447 11.6621C2.33447 11.8888 2.40055 12.1107 2.52463 12.3005C2.6487 12.4903 2.82539 12.6398 3.0331 12.7308L13.0314 17.2901C13.3354 17.4287 13.6656 17.5005 13.9998 17.5005C14.3339 17.5005 14.6641 17.4287 14.9681 17.2901L24.9898 12.7424Z"
+            stroke="#9333EA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M25.6665 11.6665V18.6665"
+            stroke="#9333EA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M7 14.5835V18.6668C7 19.5951 7.7375 20.4853 9.05025 21.1417C10.363 21.7981 12.1435 22.1668 14 22.1668C15.8565 22.1668 17.637 21.7981 18.9497 21.1417C20.2625 20.4853 21 19.5951 21 18.6668V14.5835"
+            stroke="#9333EA"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      ),
+      title: "Undergraduate Programs",
+      copy: "Bachelor's Degree (BA/BSc)",
+      color: "bg-purple-50",
+      items: ["Theology", "Divinity and Ministry", "Education"],
     },
     {
-      name: "Postgraduate Programs",
-      description: "Advanced theological studies",
-      icon: books,
+      icon: (
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 24.4998V8.1665"
+            stroke="#EA580C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18.6665 13.9998L20.9998 16.3332L25.6665 11.6665"
+            stroke="#EA580C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M25.6668 7V4.66667C25.6668 4.35725 25.5439 4.0605 25.3251 3.84171C25.1063 3.62292 24.8096 3.5 24.5002 3.5H18.6668C17.4292 3.5 16.2422 3.99167 15.367 4.86683C14.4918 5.742 14.0002 6.92899 14.0002 8.16667C14.0002 6.92899 13.5085 5.742 12.6333 4.86683C11.7582 3.99167 10.5712 3.5 9.3335 3.5H3.50016C3.19074 3.5 2.894 3.62292 2.6752 3.84171C2.45641 4.0605 2.3335 4.35725 2.3335 4.66667V19.8333C2.3335 20.1428 2.45641 20.4395 2.6752 20.6583C2.894 20.8771 3.19074 21 3.50016 21H10.5002C11.4284 21 12.3187 21.3687 12.975 22.0251C13.6314 22.6815 14.0002 23.5717 14.0002 24.5C14.0002 23.5717 14.3689 22.6815 15.0253 22.0251C15.6817 21.3687 16.5719 21 17.5002 21H24.5002C24.8096 21 25.1063 20.8771 25.3251 20.6583C25.5439 20.4395 25.6668 20.1428 25.6668 19.8333V18.3167"
+            stroke="#EA580C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      ),
+      title: "Postgraduate Programs",
+      copy: "PGD, Masters, PhD",
+      color: "bg-[#FAF5FF]",
+      items: ["Multiple specializations available"],
     },
   ];
 
@@ -219,21 +331,32 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {programs.map((program, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition"
-              >
-                <div className="bg-gray-300 h-40"></div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {program.name}
+            {programCards.map((program, index) => (
+              <div key={index} className={`p-6 rounded-lg flex flex-col justify-between gap-16 shadow-md bg-white`}>
+                <div>
+                  <div
+                    className={` mb-4 ${program.color} w-max p-3 rounded-2xl`}
+                  >
+                    {program.icon}
+                  </div>
+                  <h3 className="text-[24px] font-semibold text-gray-900">
+                    {program.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{program.description}</p>
-                  <button className="mt-4 text-red-600 hover:text-red-700 font-semibold text-sm">
-                    Learn More →
-                  </button>
+                  <p className="mb-4 text-[#800020]">{program.copy}</p>
+                  <ul className="space-y-2">
+                    {program.items.map((item, itemIndex) => (
+                      <li
+                        key={itemIndex}
+                        className="text-gray-600 text-sm flex items-start gap-2"
+                      >
+                        <span className="text-[#6B7280] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
+                <button aria-label="view details button" role="button" className="border py-2 rounded-md border-[#E5E7EB]">View Details</button>
               </div>
             ))}
           </div>
@@ -312,15 +435,18 @@ export default function Home() {
 
           <div className="h-full">
             <div className="grid grid-cols-1 md:grid-cols-2  gap-6 mb-8">
-
               {admissionPaths.map((path, index) => (
                 <div
                   key={`admission-path-${index}`}
                   className="bg-white bg-opacity-10 flex flex-col justify-center items-center py-6 px-12 rounded-lg border border-white border-opacity-20 hover:bg-opacity-20 transition"
                 >
                   <div className="bg-[#FAF6F0] rounded-full w-12 h-12 flex items-center justify-center">
-
-                  <img src={path.icon} className="w-4 h-4" aria-hidden alt="" />
+                    <img
+                      src={path.icon}
+                      className="w-4 h-4"
+                      aria-hidden
+                      alt=""
+                    />
                   </div>
                   <p className="text-black text-center text-sm">
                     {path.description}
@@ -549,7 +675,9 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[12px]">Make Payment</h4>
+                      <h4 className="font-semibold text-[12px]">
+                        Make Payment
+                      </h4>
                       <p className="text-xs text-gray-600 mt-1">
                         Tuition & fees
                       </p>

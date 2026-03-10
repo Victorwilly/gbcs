@@ -4,10 +4,10 @@ import SideBar from "../SideBar/SideBar";
 
 const DashboardLayout = () => {
   return (
-    <main className="md:flex md:flex-row md:gap-3">
+    <main className="md:flex md:flex-row">
       <SideBar />
       
-      <div>
+      <div className="w-full">
         <DashboardHeader />
         <Outlet />
       </div>

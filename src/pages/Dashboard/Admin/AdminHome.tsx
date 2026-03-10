@@ -1,9 +1,11 @@
+
+
 const AdminHome = () => {
-    return(
-        <>
-<p>admin home page</p>
-        </>
-    )
-}
+  return (
+    <>
+   <p>hello </p>
+    </>
+  );
+};
 
 export default AdminHome;

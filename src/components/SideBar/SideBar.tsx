@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import dashboardLogo from "/public/images/dashboardLogo.png";
+import dashboardLogo from "/images/dashboardLogo.png";
 
 const SideBar = () => {
   const menuItems = [

@@ -7,7 +7,7 @@ const DashboardLayout = () => {
     <main className="md:flex md:flex-row">
       <SideBar />
       
-      <div className="w-full">
+      <div className="w-full bg-[#fafafa]">
         <DashboardHeader />
         <Outlet />
       </div>

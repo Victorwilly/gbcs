@@ -13,6 +13,7 @@ import LoginLecturer from "./pages/Login/LoginLecturer";
 import LoginAdministrator from "./pages/Login/LoginAdmistrator";
 import DashboardLayout from "./components/Layout/DashboardLayout";
 import AdminHome from "./pages/Dashboard/Admin/AdminHome";
+import AdminStudents from "./pages/Dashboard/Admin/AdminStudents";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
       <Route path="/dashboard" element={<DashboardLayout />}>
         {/* admin routes */}
         <Route path="/dashboard/admin" element={<AdminHome />} />
-        {/* <Route path="/dashboard/admin/students" element={<AdminHome />} /> */}
+        <Route path="/dashboard/admin/students" element={<AdminStudents />} />
         {/* <Route path="/dashboard/admin/staffs" element={<DashboardLayout />} /> */}
         {/* <Route path="/dashboard/admin/courses" element={<DashboardLayout />} /> */}
         {/* <Route path="/dashboard/admin/timetables" element={<DashboardLayout />} /> */}

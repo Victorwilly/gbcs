@@ -39,7 +39,7 @@ function App() {
         {/* <Route path="/dashboard/admin/students" element={<AdminHome />} /> */}
         {/* <Route path="/dashboard/admin/staffs" element={<DashboardLayout />} /> */}
         {/* <Route path="/dashboard/admin/courses" element={<DashboardLayout />} /> */}
-        {/* <Route path="/dashboard/admin/timetable" element={<DashboardLayout />} /> */}
+        {/* <Route path="/dashboard/admin/timetables" element={<DashboardLayout />} /> */}
         {/* <Route path="/dashboard/admin/feesandpayments" element={<DashboardLayout />} /> */}
         {/* <Route path="/dashboard/admin/reports" element={<DashboardLayout />} /> */}
         {/* <Route path="/dashboard/admin/announcements" element={<DashboardLayout />} /> */}

@@ -43,6 +43,7 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin"
     },
     {
       name: "Students",
@@ -84,6 +85,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/students"
+
     },
     {
       name: "Staff & Lecturers",
@@ -118,6 +121,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/staffs"
+
     },
     {
       name: "Courses",
@@ -145,6 +150,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/courses"
+
     },
     {
       name: "Timetables",
@@ -186,6 +193,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/timetables"
+
     },
     {
       name: "Fees & Payments",
@@ -213,6 +222,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/feesandpayments"
+
     },
     {
       name: "Reports",
@@ -261,6 +272,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/reports"
+
     },
     {
       name: "Announcements",
@@ -288,6 +301,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/announcements"
+
     },
     {
       name: "Hostel Management",
@@ -385,6 +400,8 @@ const SideBar = () => {
           </defs>
         </svg>
       ),
+      url: "/dashboard/admin/hostelmanagement"
+
     },
     {
       name: "Settings",
@@ -412,6 +429,8 @@ const SideBar = () => {
           />
         </svg>
       ),
+      url: "/dashboard/admin/settings"
+
     },
   ];
 
@@ -456,8 +475,12 @@ const SideBar = () => {
           {menuItems.map((item, index) => (
             <li key={index}>
               <NavLink
-                to="#"
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-[#80002014] rounded-lg transition-colors text-sm"
+                to={item.url}
+                className={({ isActive }) =>
+                  isActive
+                    ? "flex items-center gap-2 px-4 py-2  bg-[#80002014] rounded-lg transition-colors text-sm"
+                    : "flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-[#80002014] rounded-lg transition-colors text-sm"
+                }
               >
                 <div className="w-6 h-6" aria-hidden>
                   {item.icon}

@@ -416,7 +416,7 @@ const SideBar = () => {
   ];
 
   return (
-    <aside className="w-full md:w-64 lg:w-72 bg-white border-r border-gray-200 flex flex-col h-screen">
+    <aside className="w-full sticky top-0 md:w-64 lg:w-72 bg-white border-r border-gray-200 flex flex-col h-screen">
       {/* header */}
       <div className="px-4 py-6 border-b border-gray-200">
         <div className="flex items-center gap-3">

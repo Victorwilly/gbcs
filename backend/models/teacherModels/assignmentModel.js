@@ -1,0 +1,33 @@
+import mongoose from 'mongoose';
+
+const assignmentSchema = mongoose.Schema(
+   {
+    assignmentQuestion:{
+        type:String,
+        required: [true, 'Please write down the assigment question'],
+    },
+
+    submissionDeadline:{
+        type:Date,
+         required: [true, 'Please provide a submission deadline'],
+    },
+
+    level: {
+        type: String,
+        required: [true, 'Please enter a level']
+    },
+    
+     courses:
+         {
+           type: mongoose.Schema.Types.ObjectId,
+           required: true,
+           ref: 'Course',
+         },
+   },
+     {
+    timestamps: true,
+  }
+
+)
+
+export default mongoose.model('Assignment', assignmentSchema)
